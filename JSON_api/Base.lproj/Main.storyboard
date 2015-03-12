@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JSON_api" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,154 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yfV-m7-mpP">
+                                <rect key="frame" x="16" y="42" width="568" height="558"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchResultCell" textLabel="JJf-kU-MCq" detailTextLabel="kfC-4k-5l6" style="IBUITableViewCellStyleSubtitle" id="MEa-yB-KCe">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MEa-yB-KCe" id="5xK-pB-h4Y">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JJf-kU-MCq">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kfC-4k-5l6">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="mfu-R8-BE8" kind="presentation" id="nns-VA-Hm5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="4xq-CQ-loh"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ig0-91-pix"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yfV-m7-mpP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="8zb-mJ-83A"/>
+                            <constraint firstItem="yfV-m7-mpP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PWW-oh-qnq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yfV-m7-mpP" secondAttribute="trailing" id="lFR-RG-h5G"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yfV-m7-mpP" secondAttribute="bottom" id="vdy-Bv-4sD"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="bnA-gh-O4f"/>
+                    <connections>
+                        <outlet property="appsTableView" destination="yfV-m7-mpP" id="7zx-NO-aWS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1117" y="315"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="71b-cP-p4J">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" id="mfu-R8-BE8" customClass="DetailsViewController" customModule="JSON_api" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Vh-5I-S6d"/>
+                        <viewControllerLayoutGuide type="bottom" id="7iA-VC-8eb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cus-Bu-bWc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ys8-PP-H6o">
+                                <rect key="frame" x="16" y="78" width="42" height="20"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5I2-4C-cAP">
+                                <rect key="frame" x="16" y="107" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="adX-l1-BkG"/>
+                                    <constraint firstAttribute="height" constant="80" id="eyT-sp-DaP"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="29C-Dl-TWw">
+                                <rect key="frame" x="0.0" y="195" width="600" height="405"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrackCell" id="zgA-ke-uz6" customClass="TrackCell" customModule="JSON_api" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zgA-ke-uz6" id="Fff-TW-tKc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avv-TD-tw3">
+                                                    <rect key="frame" x="45" y="14" width="547" height="21"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPB-NS-vQu">
+                                                    <rect key="frame" x="8" y="14" width="23" height="23"/>
+                                                    <state key="normal" backgroundImage="play_alt-128.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playIcon" destination="jPB-NS-vQu" id="SHx-Cr-rWN"/>
+                                            <outlet property="titleLabel" destination="avv-TD-tw3" id="Wx3-rU-LQr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mfu-R8-BE8" id="3cC-l6-A1Y"/>
+                                    <outlet property="delegate" destination="mfu-R8-BE8" id="yJf-4w-oF0"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hm-oO-W1o">
+                                <rect key="frame" x="16" y="33" width="38" height="28"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="13"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="7cJ-JL-09K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="29C-Dl-TWw" firstAttribute="top" secondItem="5I2-4C-cAP" secondAttribute="bottom" constant="8" id="B0l-xh-ZEK"/>
+                            <constraint firstItem="8hm-oO-W1o" firstAttribute="top" secondItem="3Vh-5I-S6d" secondAttribute="bottom" constant="13" id="Hvk-xZ-3gw"/>
+                            <constraint firstItem="8hm-oO-W1o" firstAttribute="leading" secondItem="cus-Bu-bWc" secondAttribute="leadingMargin" id="Mjq-v2-0rf"/>
+                            <constraint firstItem="Ys8-PP-H6o" firstAttribute="top" secondItem="8hm-oO-W1o" secondAttribute="bottom" constant="17" id="bSY-pD-hJm"/>
+                            <constraint firstItem="5I2-4C-cAP" firstAttribute="leading" secondItem="cus-Bu-bWc" secondAttribute="leadingMargin" id="fPW-5v-LTw"/>
+                            <constraint firstItem="Ys8-PP-H6o" firstAttribute="leading" secondItem="cus-Bu-bWc" secondAttribute="leadingMargin" id="l9s-2Y-ovt"/>
+                            <constraint firstItem="7iA-VC-8eb" firstAttribute="top" secondItem="29C-Dl-TWw" secondAttribute="bottom" id="ld8-3J-pLQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="29C-Dl-TWw" secondAttribute="trailing" constant="-16" id="ts0-0d-vQw"/>
+                            <constraint firstItem="29C-Dl-TWw" firstAttribute="leading" secondItem="cus-Bu-bWc" secondAttribute="leadingMargin" constant="-16" id="uL3-7d-KNM"/>
+                            <constraint firstItem="5I2-4C-cAP" firstAttribute="top" secondItem="Ys8-PP-H6o" secondAttribute="bottom" constant="9" id="vJq-vw-mKH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="albumCover" destination="5I2-4C-cAP" id="002-nf-Civ"/>
+                        <outlet property="titleLabel" destination="Ys8-PP-H6o" id="MTP-dM-war"/>
+                        <outlet property="tracksTableView" destination="29C-Dl-TWw" id="X0J-HN-dzG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SK5-vA-fjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="269"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play_alt-128.png" width="128" height="128"/>
+    </resources>
 </document>

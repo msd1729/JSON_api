@@ -13,6 +13,13 @@
 		036A03351AB0E0BC001C0468 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036A03341AB0E0BC001C0468 /* Images.xcassets */; };
 		036A03381AB0E0BC001C0468 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 036A03361AB0E0BC001C0468 /* LaunchScreen.xib */; };
 		036A03441AB0E0BC001C0468 /* JSON_apiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A03431AB0E0BC001C0468 /* JSON_apiTests.swift */; };
+		036A034E1AB0E921001C0468 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A034D1AB0E921001C0468 /* APIController.swift */; };
+		036A03501AB0F38E001C0468 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 036A034F1AB0F38E001C0468 /* Blank52.png */; };
+		036A03521AB0F585001C0468 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A03511AB0F585001C0468 /* Album.swift */; };
+		036A03541AB0F81B001C0468 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A03531AB0F81B001C0468 /* DetailsViewController.swift */; };
+		036A03561AB1204D001C0468 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A03551AB1204D001C0468 /* Track.swift */; };
+		036A03581AB122BF001C0468 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A03571AB122BF001C0468 /* TrackCell.swift */; };
+		036A035A1AB1258E001C0468 /* play_alt-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 036A03591AB1258E001C0468 /* play_alt-128.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,13 @@
 		036A033D1AB0E0BC001C0468 /* JSON_apiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSON_apiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		036A03421AB0E0BC001C0468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		036A03431AB0E0BC001C0468 /* JSON_apiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON_apiTests.swift; sourceTree = "<group>"; };
+		036A034D1AB0E921001C0468 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		036A034F1AB0F38E001C0468 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank52.png; sourceTree = "<group>"; };
+		036A03511AB0F585001C0468 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		036A03531AB0F81B001C0468 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		036A03551AB1204D001C0468 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		036A03571AB122BF001C0468 /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		036A03591AB1258E001C0468 /* play_alt-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_alt-128.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +92,15 @@
 			isa = PBXGroup;
 			children = (
 				036A032D1AB0E0BC001C0468 /* AppDelegate.swift */,
+				036A03591AB1258E001C0468 /* play_alt-128.png */,
+				036A034F1AB0F38E001C0468 /* Blank52.png */,
 				036A032F1AB0E0BC001C0468 /* ViewController.swift */,
+				036A034D1AB0E921001C0468 /* APIController.swift */,
+				036A03511AB0F585001C0468 /* Album.swift */,
+				036A03531AB0F81B001C0468 /* DetailsViewController.swift */,
+				036A03551AB1204D001C0468 /* Track.swift */,
 				036A03311AB0E0BC001C0468 /* Main.storyboard */,
+				036A03571AB122BF001C0468 /* TrackCell.swift */,
 				036A03341AB0E0BC001C0468 /* Images.xcassets */,
 				036A03361AB0E0BC001C0468 /* LaunchScreen.xib */,
 				036A032B1AB0E0BC001C0468 /* Supporting Files */,
@@ -193,7 +214,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				036A03331AB0E0BC001C0468 /* Main.storyboard in Resources */,
+				036A03501AB0F38E001C0468 /* Blank52.png in Resources */,
 				036A03381AB0E0BC001C0468 /* LaunchScreen.xib in Resources */,
+				036A035A1AB1258E001C0468 /* play_alt-128.png in Resources */,
 				036A03351AB0E0BC001C0468 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,8 +235,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				036A03581AB122BF001C0468 /* TrackCell.swift in Sources */,
 				036A03301AB0E0BC001C0468 /* ViewController.swift in Sources */,
 				036A032E1AB0E0BC001C0468 /* AppDelegate.swift in Sources */,
+				036A034E1AB0E921001C0468 /* APIController.swift in Sources */,
+				036A03521AB0F585001C0468 /* Album.swift in Sources */,
+				036A03541AB0F81B001C0468 /* DetailsViewController.swift in Sources */,
+				036A03561AB1204D001C0468 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +435,7 @@
 				036A03491AB0E0BC001C0468 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		036A034A1AB0E0BC001C0468 /* Build configuration list for PBXNativeTarget "JSON_apiTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +444,7 @@
 				036A034C1AB0E0BC001C0468 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
